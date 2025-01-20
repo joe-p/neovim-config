@@ -27,7 +27,8 @@ require('lazy').setup({
 
   require 'kickstart/plugins/which-key',
 
-  require 'kickstart/plugins/telescope',
+  -- use snacks.picker instead of telescope
+  -- require 'kickstart/plugins/telescope',
 
   require 'kickstart/plugins/lspconfig',
 
