@@ -34,7 +34,7 @@ return {
         function()
           Snacks.bufdelete()
         end,
-        desc = 'Delete Buffer',
+        desc = '[D]elete Buffer',
       },
       {
         '<leader>dr',
