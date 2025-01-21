@@ -1,8 +1,12 @@
 return {
   {
     'yetone/avante.nvim',
-    event = 'VeryLazy',
-    lazy = false,
+    -- lazy load when first using avante to prevent 1password prompt from happening every time we start neovim
+    lazy = true,
+    cmd = { 'AvanteAsk', 'AvanteToggle', 'AvanteChat' },
+    keys = {
+      { '<leader>aa', '<cmd>AvanteToggle<cr>', desc = 'Toggle Avante' },
+    },
     version = '*', -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
     opts = {
       -- add any opts here
