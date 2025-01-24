@@ -10,12 +10,29 @@ return {
     version = '*', -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
     opts = {
       -- add any opts here
-      provider = 'claude', -- Recommend using Claude
+      provider = 'claude',
+
+      -- Anthropic API
       claude = {
         endpoint = 'https://api.anthropic.com',
         model = 'claude-3-5-sonnet-20241022',
         api_key_name = 'cmd:op read op://Personal/anthropic_avante.nvim/credential --no-newline',
       },
+
+      -- fireworks deepseekv3
+      -- openai = {
+      --   endpoint = 'https://api.fireworks.ai/inference/v1',
+      --   model = 'accounts/fireworks/models/deepseek-v3',
+      --   api_key_name = 'cmd:op read op://Personal/fireworks_deepseekv3_avante.nvim/credential --no-newline',
+      -- },
+
+      -- deepseek API
+      -- openai = {
+      --   endpoint = 'https://api.deepseek.com',
+      --   model = 'deepseek-chat',
+      --   api_key_name = 'cmd:op read op://Personal/deepseek_avante.nvim/credential --no-newline',
+      -- },
+
       behaviour = {
         auto_suggestions = false, -- Experimental stage
       },
