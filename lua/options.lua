@@ -63,6 +63,7 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 10
 
 -- From https://github.com/rmagatti/auto-session?tab=readme-ov-file#recommended-sessionoptions-config
-vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'
+-- also add globals as per :h bufferline
+vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions,globals'
 
 -- vim: ts=2 sts=2 sw=2 et

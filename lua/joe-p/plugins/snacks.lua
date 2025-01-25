@@ -30,13 +30,6 @@ return {
         desc = 'Notification History',
       },
       {
-        '<leader>bd',
-        function()
-          Snacks.bufdelete()
-        end,
-        desc = '[D]elete Buffer',
-      },
-      {
         '<leader>dr',
         function()
           Snacks.rename.rename_file()
