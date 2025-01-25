@@ -19,7 +19,9 @@ return {
           -- wo = { wrap = true } -- Wrap notifications
         },
       },
-      picker = {},
+      picker = {
+        ui_select = true,
+      },
     },
     keys = {
       {
