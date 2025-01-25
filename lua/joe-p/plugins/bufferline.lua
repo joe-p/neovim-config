@@ -8,7 +8,13 @@ return {
       { '<leader>p', '<cmd>BufferLineTogglePin<CR>', desc = 'Toggle Buffer [P]in' },
       { '<leader> ', '<cmd>BufferLinePick<CR>', desc = 'Pick Buffer' },
       { '<leader>bC', '<cmd>BufferLinePickClose<CR>', desc = 'Pick Buffer and [C]lose' },
-      { '<leader>bc', '<cmd>BufferLineClose<CR>', desc = '[C]lose Buffer' },
+      {
+        '<leader>bc',
+        function()
+          require('snacks').bufdelete.delete()
+        end,
+        desc = '[C]lose Buffer',
+      },
     },
     config = function()
       local bufferline = require 'bufferline'
