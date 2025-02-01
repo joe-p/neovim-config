@@ -34,11 +34,12 @@ This configuration targets the latest neovim release, 10.3.
 ### Plugins
 
 * `auto-session`: Restore directory-based sessions
-* `avante`: LLM API chat
 * `bufferline`: See open buffers and quickly pin and switch between them
+* `CopilotChat`: LLM API chat
+* `gitlinker`: Open links to code in remote repositories
 * `llama`: Local LLM FIM auto-completion (see the [README](https://github.com/ggml-org/llama.vim?tab=readme-ov-file#llamacpp-settings) for llama.cpp settings)
-* `neo-tree`: Navigate project via tree structure
-* `snacks`: Various QoL improvements and nice picker (especially for LSP symbols)
+* `markview`: Markdown formatting
+* `snacks`: Various QoL improvements, explorer, and nice picker (especially for LSP symbols)
 * `tiny-inline-diagnostic`: Inline diagnostics that properly wrap
 * `treesitter-context`: Show code context when scrolling
 * `treesitter-textobjects`: Quicky navigating through code
