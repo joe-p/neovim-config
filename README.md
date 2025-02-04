@@ -35,7 +35,7 @@ This configuration targets the latest neovim release, 10.3.
 
 * `auto-session`: Restore directory-based sessions
 * `bufferline`: See open buffers and quickly pin and switch between them
-* `CopilotChat`: LLM API chat
+* `CopilotChat`: GitHub Copilot chat integration
 * `gitlinker`: Open links to code in remote repositories
 * `llama`: Local LLM FIM auto-completion (see the [README](https://github.com/ggml-org/llama.vim?tab=readme-ov-file#llamacpp-settings) for llama.cpp settings)
 * `markview`: Markdown formatting
