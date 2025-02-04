@@ -156,6 +156,7 @@ return {
         -- ts_ls = {},
         --
 
+        vtsls = { enabled = false },
         ts_ls = {},
         gopls = {},
         rust_analyzer = {},
