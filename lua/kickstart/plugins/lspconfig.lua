@@ -156,6 +156,7 @@ return {
         -- ts_ls = {},
         --
 
+        pyright = { enabled = false },
         ruff = {},
         basedpyright = {},
         vtsls = { enabled = false },

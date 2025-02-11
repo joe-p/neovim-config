@@ -25,13 +25,6 @@ return {
     },
     keys = {
       {
-        '<leader>wf',
-        function()
-          Snacks.picker.explorer()
-        end,
-        desc = '[w]orkspace [f]iles',
-      },
-      {
         '<leader>nh',
         function()
           Snacks.notifier.show_history()
