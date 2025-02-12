@@ -158,7 +158,20 @@ return {
 
         pyright = { enabled = false },
         ruff = {},
-        basedpyright = {},
+        basedpyright = { enabled = true },
+        pylsp = {
+          enabled = false,
+          settings = {
+            pylsp = {
+              plugins = {
+                pylsp_mypy = {
+                  enabled = true,
+                  dmypy = true,
+                },
+              },
+            },
+          },
+        },
         vtsls = { enabled = false },
         ts_ls = {},
         gopls = {},
