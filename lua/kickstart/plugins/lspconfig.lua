@@ -210,6 +210,18 @@ return {
           end,
         },
       }
+
+      -- sourcekit is not installed by mason
+      local lspconfig = require 'lspconfig'
+      lspconfig.sourcekit.setup {
+        capabilities = {
+          workspace = {
+            didChangeWatchedFiles = {
+              dynamicRegistration = true,
+            },
+          },
+        },
+      }
     end,
   },
 }
