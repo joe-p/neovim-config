@@ -157,13 +157,20 @@ return {
         -- ts_ls = {},
         --
 
-        pyright = { enabled = false },
+        -- Python
         ruff = {},
-        basedpyright = { enabled = true },
-        vtsls = { enabled = false },
+        basedpyright = {},
+
+        -- TypeScript
         ts_ls = {},
+
+        -- Go
         gopls = {},
+
+        -- Rust
         rust_analyzer = {},
+
+        -- Lua
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },
