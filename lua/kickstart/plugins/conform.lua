@@ -27,6 +27,9 @@ return {
           lsp_format_opt = 'fallback'
         end
         return {
+          filter = function(client)
+            return client.name ~= 'ts_ls'
+          end,
           timeout_ms = 500,
           lsp_format = lsp_format_opt,
         }
@@ -35,6 +38,8 @@ return {
         lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
         python = { 'black' },
+        typescript = { 'prettier' },
+        --
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
