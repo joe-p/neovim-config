@@ -170,6 +170,13 @@ return {
         -- Rust
         rust_analyzer = {},
 
+        -- Ruby
+        ruby_lsp = {},
+        rubocop = {},
+
+        -- Markdown
+        marksman = {},
+
         -- Lua
         lua_ls = {
           -- cmd = { ... },
