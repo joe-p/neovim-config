@@ -2,7 +2,7 @@ return {
   {
     'CopilotC-Nvim/CopilotChat.nvim',
     opts = {
-      model = 'claude-3.5-sonnet',
+      model = 'claude-3.7-sonnet',
     },
     keys = {
       { '<leader>ae', '<cmd>CopilotChatExplain<cr>', desc = 'CopilotChat - Explain code', mode = { 'n', 'v' } },
@@ -14,7 +14,7 @@ return {
       {
         'zbirenbaum/copilot.lua', -- for providers='copilot'
         opts = {
-          model = 'claude-3.5-sonnet',
+          model = 'claude-3.7-sonnet',
         },
         config = function(_, opts)
           require('copilot').setup(opts)
