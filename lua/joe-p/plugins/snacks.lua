@@ -356,6 +356,21 @@ return {
           Snacks.toggle.inlay_hints():map '<leader>th'
           Snacks.toggle.indent():map '<leader>ti'
           Snacks.toggle.dim():map '<leader>tD'
+          Snacks.toggle({
+            name = 'Toggle Appearance',
+            get = function()
+              return vim.api.nvim_get_option_value('background', {}) == 'dark'
+            end,
+            set = function(state)
+              if state then
+                vim.api.nvim_set_option_value('background', 'dark', {})
+                vim.cmd 'colorscheme tokyonight-moon'
+              else
+                vim.api.nvim_set_option_value('background', 'light', {})
+                vim.cmd 'colorscheme tokyonight-day'
+              end
+            end,
+          }):map '<leader>ta'
         end,
       })
     end,
