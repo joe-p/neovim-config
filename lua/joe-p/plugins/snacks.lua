@@ -23,18 +23,6 @@ return {
         ui_select = true,
       },
     },
-    config = function()
-      vim.api.nvim_create_autocmd('TermOpen', {
-        pattern = '*',
-        callback = function()
-          local term_title = vim.b.term_title
-          if term_title and term_title:match 'lazygit' then
-            -- Create lazygit specific mappings
-            vim.keymap.set('t', '`', '<cmd>close<cr>', { buffer = true })
-          end
-        end,
-      })
-    end,
     keys = {
       {
         '<leader>nh',
@@ -64,27 +52,6 @@ return {
           Snacks.git.blame_line()
         end,
         desc = 'Git Blame Line',
-      },
-      {
-        '<leader>gf',
-        function()
-          Snacks.lazygit.log_file()
-        end,
-        desc = 'Lazygit Current File History',
-      },
-      {
-        '<leader>gg',
-        function()
-          Snacks.lazygit()
-        end,
-        desc = 'Lazygit',
-      },
-      {
-        '<leader>gl',
-        function()
-          Snacks.lazygit.log()
-        end,
-        desc = 'Lazygit Log (cwd)',
       },
       {
         '<leader>nd',
