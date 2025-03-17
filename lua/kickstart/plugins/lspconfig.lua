@@ -177,6 +177,17 @@ return {
         -- Markdown
         marksman = {},
 
+        -- Grammar/spelling
+        harper_ls = {
+          settings = {
+            ['harper-ls'] = {
+              linters = {
+                SentenceCapitalization = false,
+              },
+            },
+          },
+        },
+
         -- Lua
         lua_ls = {
           -- cmd = { ... },
