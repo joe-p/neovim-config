@@ -19,6 +19,7 @@ return {
       '<leader>Tt',
       function()
         require('neotest').run.run()
+        require('neotest').summary.open()
       end,
       desc = 'Run Test',
     },
@@ -33,6 +34,7 @@ return {
       '<leader>Tf',
       function()
         require('neotest').run.run(vim.fn.expand '%')
+        require('neotest').summary.open()
       end,
       desc = 'Run File',
     },
