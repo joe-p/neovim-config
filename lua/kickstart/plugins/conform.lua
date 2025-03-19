@@ -13,14 +13,14 @@ return {
         desc = '[F]ormat buffer',
       },
       {
-        '<leader>tf',
+        '<leader>Tf',
         function()
           vim.g.disable_autoformat = not vim.g.disable_autoformat
         end,
         desc = 'Toggle [F]ormat on save',
       },
       {
-        '<leader>tF',
+        '<leader>TF',
         function()
           vim.b.disable_autoformat = not vim.b.disable_autoformat
         end,

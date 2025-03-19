@@ -16,7 +16,7 @@ return {
   },
   keys = {
     {
-      '<leader>Tt',
+      '<leader>tt',
       function()
         require('neotest').run.run()
         require('neotest').summary.open()
@@ -24,14 +24,14 @@ return {
       desc = 'Run Test',
     },
     {
-      '<leader>To',
+      '<leader>to',
       function()
         require('neotest').output.open()
       end,
       desc = 'Open Output',
     },
     {
-      '<leader>Tf',
+      '<leader>tf',
       function()
         require('neotest').run.run(vim.fn.expand '%')
         require('neotest').summary.open()
@@ -39,21 +39,21 @@ return {
       desc = 'Run File',
     },
     {
-      '<leader>Ts',
+      '<leader>ts',
       function()
         require('neotest').summary.toggle()
       end,
       desc = 'Toggle Summary',
     },
     {
-      '<leader>Tq',
+      '<leader>tq',
       function()
         require('neotest').run.stop()
       end,
       desc = 'Stop',
     },
     {
-      '<leader>Ta',
+      '<leader>ta',
       function()
         require('neotest').run.attach()
       end,

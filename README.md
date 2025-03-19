@@ -16,7 +16,7 @@ This configuration targets the latest neovim release, 10.3.
 * `gitsigns`: Modified signs to be more like the default config, with the exception of using `+` for additions
 * `gitsigns`: Use `]g` and `[g` to jump between git changes
 * `gitsigns`: Use `<leader>H` instead of `<leader>h` for hunk actions since `h` is used for harpoon
-* `gitsigns`: Use `<leader>tg` and `<leader>tG` to toggle show deleted and current line blame
+* `gitsigns`: Use `<leader>Tg` and `<leader>TG` to toggle show deleted and current line blame
 * `gitsigns`: Enable current line blame by default
 * `telescope`: Removed in favor of `Snacks.picker`
 * `lspconfig`: Removed telescope bindings in favor of `Snacks.picker`

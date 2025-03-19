@@ -315,14 +315,14 @@ return {
           vim.print = _G.dd -- Override print to use snacks for `:=` command
 
           -- Create some toggle mappings
-          Snacks.toggle.option('spell', { name = 'Spelling' }):map '<leader>ts'
-          Snacks.toggle.option('wrap', { name = 'Wrap' }):map '<leader>tw'
-          Snacks.toggle.diagnostics():map '<leader>td'
-          Snacks.toggle.option('conceallevel', { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2 }):map '<leader>tc'
-          Snacks.toggle.treesitter():map '<leader>tt'
-          Snacks.toggle.inlay_hints():map '<leader>th'
-          Snacks.toggle.indent():map '<leader>ti'
-          Snacks.toggle.dim():map '<leader>tD'
+          Snacks.toggle.option('spell', { name = 'Spelling' }):map '<leader>Ts'
+          Snacks.toggle.option('wrap', { name = 'Wrap' }):map '<leader>Tw'
+          Snacks.toggle.diagnostics():map '<leader>Td'
+          Snacks.toggle.option('conceallevel', { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2 }):map '<leader>Tc'
+          Snacks.toggle.treesitter():map '<leader>Tt'
+          Snacks.toggle.inlay_hints():map '<leader>Th'
+          Snacks.toggle.indent():map '<leader>Ti'
+          Snacks.toggle.dim():map '<leader>TD'
           Snacks.toggle({
             name = 'Toggle Appearance',
             get = function()
@@ -337,7 +337,7 @@ return {
                 vim.cmd 'colorscheme tokyonight-day'
               end
             end,
-          }):map '<leader>ta'
+          }):map '<leader>Ta'
         end,
       })
     end,
