@@ -66,4 +66,6 @@ vim.opt.scrolloff = 10
 -- also add globals as per :h bufferline
 vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions,globals'
 
+vim.diagnostic.config { virtual_lines = true }
+
 -- vim: ts=2 sts=2 sw=2 et
