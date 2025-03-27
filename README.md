@@ -6,13 +6,12 @@ I have made some changes to the original kickstart files but most of the changes
 
 To use this configuration, simply clone this repo as `~/.config/nvim` or use [$NVIM_APPNAME](https://neovim.io/doc/user/starting.html#%24NVIM_APPNAME) to try this configuration without affecting your existing config.
 
-This configuration targets the latest neovim release, 10.3. 
+This configuration targets the latest neovim release, 0.11. 
 
 ## Kickstart Changes
 
 ### Plugins
-* `nvim-cmp`: Removed snippets since they add a lot of noise and I don't use them often
-* `nvim-cmp`: Use enter to confirm completion suggestion
+* `nvim-cmp`: Disabled in favor of blink
 * `gitsigns`: Modified signs to be more like the default config, with the exception of using `+` for additions
 * `gitsigns`: Use `]g` and `[g` to jump between git changes
 * `gitsigns`: Use `<leader>H` instead of `<leader>h` for hunk actions since `h` is used for harpoon
@@ -21,28 +20,35 @@ This configuration targets the latest neovim release, 10.3.
 * `telescope`: Removed in favor of `Snacks.picker`
 * `lspconfig`: Removed telescope bindings in favor of `Snacks.picker`
 * `lspconfig`: Rename is now `<leader>cr`
-* `lspconfig`: Disable inlay hints (now handled by `tiny-inline-diagnostic.nvim`)
-* `lspconfig`: Add `ts_ls`, `gopls`, and `rust_analyzer`
 * `tokyonight`: Use `tokyonight-moon`
 
 ### Configuration
 
 * `opts`: Show both relative and absolute line number
+* `diagnostics`: Use `virtual_lines` 
 
 ## New Features
 
 ### Plugins
 
-* `auto-session`: Restore directory-based sessions
+* `auto-dark-mode`: Toggle nvim colorscheme based on system theme
+* `auto-session`: Restore directory-based sessions 
+* `blink`: Use `blink` for auto-completion
 * `bufferline`: See open buffers and quickly pin and switch between them
 * `CopilotChat`: GitHub Copilot chat integration
+* `diffview`: View Git diffs in side-by-side view (similar to VSCode)
+* `flash`: Quickly jump to specific location in text
 * `gitlinker`: Open links to code in remote repositories
+* `grug-far`: Project-wide find and replace using
+* `lazygit`: Lazygit integration
 * `llama`: Local LLM FIM auto-completion (see the [README](https://github.com/ggml-org/llama.vim?tab=readme-ov-file#llamacpp-settings) for llama.cpp settings)
 * `markview`: Markdown formatting
+* `neotest`: Test runner/summary UI
 * `snacks`: Various QoL improvements, explorer, and nice picker (especially for LSP symbols)
-* `tiny-inline-diagnostic`: Inline diagnostics that properly wrap
+* `stickybuf`: Enables sticking a buf/file type to a window
 * `treesitter-context`: Show code context when scrolling
 * `treesitter-textobjects`: Quicky navigating through code
+* `vimade`: Dim non-active windows
 
 ### Configuration
 
