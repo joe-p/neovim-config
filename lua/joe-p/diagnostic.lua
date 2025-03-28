@@ -65,16 +65,20 @@ local function virtual_lines_format(diagnostic)
     return nil
   end
 
-  local message = diagnostic.message
-
   local win = buf_to_win(diagnostic.bufnr)
   local sign_column_width = vim.fn.getwininfo(win)[1].textoff
   local text_area_width = vim.api.nvim_win_get_width(win) - sign_column_width
   local center_width = 5
   local left_width = 1
 
-  local max_width = text_area_width - diagnostic.col - center_width - left_width
-  return table.concat(split_line(message, max_width), '\n')
+  ---@type string[]
+  local lines = {}
+  for msg_line in diagnostic.message:gmatch '([^\n]+)' do
+    local max_width = text_area_width - diagnostic.col - center_width - left_width
+    vim.list_extend(lines, split_line(msg_line, max_width))
+  end
+
+  return table.concat(lines, '\n')
 end
 
 vim.diagnostic.config { virtual_lines = { format = virtual_lines_format }, severity_sort = { reverse = false } }
