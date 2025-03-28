@@ -57,11 +57,13 @@ local function split_line(str, max_width)
   return lines
 end
 
+local hidden_severities = { vim.diagnostic.severity.HINT, vim.diagnostic.severity.INFO, vim.diagnostic.severity.WARN }
+
 ---@param diagnostic vim.Diagnostic
 local function virtual_lines_format(diagnostic)
   -- Only render hints on the current line
-  -- Note this MUST be paired with an autocmd that hides/shows diagnostics to force a re-render
-  if diagnostic.severity == vim.diagnostic.severity.HINT and diagnostic.lnum + 1 ~= vim.fn.line '.' then
+  -- Note this MUST be paired with an autocmd that hides/shows diagnostics to force a Re-render
+  if vim.list_contains(hidden_severities, diagnostic.severity) and diagnostic.lnum + 1 ~= vim.fn.line '.' then
     return nil
   end
 
@@ -101,7 +103,7 @@ vim.api.nvim_create_autocmd({ 'CursorMoved' }, {
       -- filter for hints
       local hints = {}
       for _, diagnostic in ipairs(diagnostics) do
-        if diagnostic.severity == vim.diagnostic.severity.HINT then
+        if vim.list_contains(hidden_severities, diagnostic.severity) then
           table.insert(hints, diagnostic)
         end
       end
