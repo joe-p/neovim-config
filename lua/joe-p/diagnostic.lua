@@ -18,7 +18,7 @@ local function buf_to_win(bufnr)
     end
   end
 
-  return 0
+  return current_win
 end
 
 -- Split a string into multiple lines, each no longer than max_width
