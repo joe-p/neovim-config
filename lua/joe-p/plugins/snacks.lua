@@ -320,7 +320,6 @@ return {
           Snacks.toggle.diagnostics():map '<leader>Td'
           Snacks.toggle.option('conceallevel', { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2 }):map '<leader>Tc'
           Snacks.toggle.treesitter():map '<leader>Tt'
-          Snacks.toggle.inlay_hints():map '<leader>Th'
           Snacks.toggle.indent():map '<leader>Ti'
           Snacks.toggle.dim():map '<leader>TD'
           Snacks.toggle({
