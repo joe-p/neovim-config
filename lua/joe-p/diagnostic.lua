@@ -57,16 +57,8 @@ local function split_line(str, max_width)
   return lines
 end
 
-local hidden_severities = { vim.diagnostic.severity.HINT, vim.diagnostic.severity.INFO, vim.diagnostic.severity.WARN }
-
 ---@param diagnostic vim.Diagnostic
 local function virtual_lines_format(diagnostic)
-  -- Only render hints on the current line
-  -- Note this MUST be paired with an autocmd that hides/shows diagnostics to force a Re-render
-  if vim.list_contains(hidden_severities, diagnostic.severity) and diagnostic.lnum + 1 ~= vim.fn.line '.' then
-    return nil
-  end
-
   local win = buf_to_win(diagnostic.bufnr)
   local sign_column_width = vim.fn.getwininfo(win)[1].textoff
   local text_area_width = vim.api.nvim_win_get_width(win) - sign_column_width
@@ -83,13 +75,25 @@ local function virtual_lines_format(diagnostic)
   return table.concat(lines, '\n')
 end
 
-vim.diagnostic.config { virtual_lines = { format = virtual_lines_format }, severity_sort = { reverse = false } }
+-- Don't show virtual text on curresnt line since we'll show virtual_lines
+---@param diagnostic vim.Diagnostic
+local function virtual_text_format(diagnostic)
+  if vim.fn.line '.' == diagnostic.lnum + 1 then
+    return nil
+  end
 
--- Show virtual lines for hints when the cursor is on that line
+  return diagnostic.message
+end
+
+vim.diagnostic.config {
+  virtual_text = { format = virtual_text_format, severity = { min = vim.diagnostic.severity.WARN } },
+  virtual_lines = { format = virtual_lines_format, current_line = true },
+  severity_sort = { reverse = false },
+}
+
+-- Re-draw diagnostics each line change to account for virtual_text changes
 
 local last_line = vim.fn.line '.'
--- Show virtual lines for hints when the cursor is on that line
-local last_line_was_hint = false
 
 vim.api.nvim_create_autocmd({ 'CursorMoved' }, {
   callback = function()
@@ -97,30 +101,12 @@ vim.api.nvim_create_autocmd({ 'CursorMoved' }, {
 
     -- Check if the cursor has moved to a different line
     if current_line ~= last_line then
-      -- Get all diagnostics on the current line
-      local diagnostics = vim.diagnostic.get(0, { lnum = current_line - 1 })
-
-      -- filter for hints
-      local hints = {}
-      for _, diagnostic in ipairs(diagnostics) do
-        if vim.list_contains(hidden_severities, diagnostic.severity) then
-          table.insert(hints, diagnostic)
-        end
-      end
-
-      if #hints > 0 then
-        last_line_was_hint = true
-        vim.diagnostic.hide()
-        vim.diagnostic.show()
-      elseif last_line_was_hint then
-        last_line_was_hint = false
-        vim.diagnostic.hide()
-        vim.diagnostic.show()
-      end
-
-      -- Update the last_line variable
-      last_line = current_line
+      vim.diagnostic.hide()
+      vim.diagnostic.show()
     end
+
+    -- Update the last_line variable
+    last_line = current_line
   end,
 })
 
