@@ -20,7 +20,7 @@ This configuration targets the latest neovim release, 0.11.
 * `telescope`: Removed in favor of `Snacks.picker`
 * `lspconfig`: Removed telescope bindings in favor of `Snacks.picker`
 * `lspconfig`: Rename is now `<leader>cr`
-* `tokyonight`: Use `tokyonight-moon`
+* `tokyonight`: Removed in favor of `catppuccin`
 
 ### Configuration
 
