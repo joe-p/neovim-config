@@ -75,7 +75,7 @@ local function virtual_lines_format(diagnostic)
   return table.concat(lines, '\n')
 end
 
--- Don't show virtual text on curresnt line since we'll show virtual_lines
+-- Don't show virtual text on current line since we'll show virtual_lines
 ---@param diagnostic vim.Diagnostic
 local function virtual_text_format(diagnostic)
   if vim.fn.line '.' == diagnostic.lnum + 1 then
