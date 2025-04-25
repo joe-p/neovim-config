@@ -57,6 +57,7 @@ return {
         -- Conform can also run multiple formatters sequentially
         python = { 'black' },
         typescript = { 'prettier' },
+        javascript = { 'prettier' },
         markdown = { 'markdownlint' },
         --
         --
