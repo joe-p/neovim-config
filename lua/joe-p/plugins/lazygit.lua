@@ -13,6 +13,17 @@ return {
     vim.env.GIT_EDITOR = 'nvr -cc split --remote-wait'
     vim.g.lazygit_use_custom_config_file_path = 1 -- config file path is evaluated if this value is 1
     vim.g.lazygit_config_file_path = vim.fn.expand '$HOME/.config/lazygit/config.yml'
+
+    -- Disable <esc> keybinds in lazygit
+    -- Useful in combination with `quitOnTopLevelReturn: true` in lazygit config
+    vim.api.nvim_create_autocmd('TermEnter', {
+      callback = function()
+        if string.find(vim.api.nvim_buf_get_name(0), 'lazygit') then
+          vim.keymap.set('t', '<Esc>', '<NOP>', { buffer = true })
+          vim.keymap.set('t', '<Esc><Esc>', '<NOP>', { buffer = true })
+        end
+      end,
+    })
   end,
   -- optional for floating window border decoration
   dependencies = {
