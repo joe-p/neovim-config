@@ -234,8 +234,10 @@ return {
         },
       }
 
-      -- sourcekit is not installed by mason
+      --  LSPs not installed by mason
       local lspconfig = require 'lspconfig'
+      lspconfig.gh_actions_ls.setup {}
+
       lspconfig.sourcekit.setup {
         capabilities = {
           workspace = {
