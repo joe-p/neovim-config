@@ -22,6 +22,5 @@ return {
         notify = true,
       },
     }
-    vim.cmd.colorscheme 'catppuccin'
   end,
 }
