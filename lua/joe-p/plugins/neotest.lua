@@ -1,5 +1,6 @@
 return {
-  'nvim-neotest/neotest',
+  'joe-p/neotest',
+  branch = 'feat/get_command',
   config = function()
     require('neotest').setup {
       adapters = {
@@ -58,6 +59,19 @@ return {
         require('neotest').run.attach()
       end,
       desc = 'Attach',
+    },
+    {
+      '<leader>ty',
+      function()
+        local cmd = require('neotest').run.get_command()
+
+        if cmd then
+          vim.fn.setreg('*', table.concat(cmd, ' '))
+          -- get_command by block for a bit, so send a notification when it is done
+          vim.notify('Copied ' .. cmd[1] .. ' command!')
+        end
+      end,
+      desc = 'Yank',
     },
   },
 }
