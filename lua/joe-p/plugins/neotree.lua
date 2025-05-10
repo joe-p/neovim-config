@@ -9,7 +9,7 @@ return {
       -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
     },
     config = function()
-      vim.keymap.set('n', '<leader>wf', '<cmd>Neotree position=float reveal<CR>', { desc = '[w]orkspace [f]iles' })
+      vim.keymap.set('n', '<leader>wt', '<cmd>Neotree position=float reveal<CR>', { desc = '[W]orkspace file [T]ree (neo-tree)' })
     end,
   },
 }
