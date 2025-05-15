@@ -31,8 +31,29 @@ return {
       nerd_font_variant = 'mono',
     },
 
-    -- (Default) Only show the documentation popup when manually triggered
-    completion = { documentation = { auto_show = true } },
+    completion = {
+      documentation = { auto_show = true },
+      menu = {
+        draw = {
+          components = {
+            label = {
+              width = { fill = true, max = 60 },
+              text = function(ctx)
+                local full_label = ctx.label .. ctx.label_detail
+                local has_text_edits = ctx.item.additionalTextEdits ~= nil and #ctx.item.additionalTextEdits > 0
+                local has_imports = ctx.item.data ~= nil and ctx.item.data.imports ~= nil and #ctx.item.data.imports > 0
+
+                if has_text_edits or has_imports then
+                  full_label = '~' .. full_label
+                end
+
+                return full_label
+              end,
+            },
+          },
+        },
+      },
+    },
 
     -- Default list of enabled providers defined so that you can extend it
     -- elsewhere in your config, without redefining it, due to `opts_extend`
