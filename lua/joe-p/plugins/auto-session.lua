@@ -12,7 +12,6 @@ return {
     },
     keys = {
       -- Will use Telescope if installed or a vim.ui.select picker otherwise
-      { '<leader>ws', '<cmd>SessionSearch<CR>', desc = '[S]witch Workspace' },
       { '<leader>wS', '<cmd>SessionSave<CR>', desc = 'Save Workspace' },
     },
   },

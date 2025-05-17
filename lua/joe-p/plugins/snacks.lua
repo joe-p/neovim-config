@@ -300,6 +300,13 @@ return {
         end,
         desc = '[G]oto T[y]pe Definition',
       },
+      {
+        '<leader>ws',
+        function()
+          Snacks.terminal.open 'search-tui'
+        end,
+        desc = '[S]earch/Replace In Workspace',
+      },
     },
     init = function()
       vim.api.nvim_create_autocmd('User', {
