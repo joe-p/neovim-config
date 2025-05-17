@@ -179,6 +179,8 @@ return {
             ['harper-ls'] = {
               linters = {
                 SentenceCapitalization = false,
+                LongSentences = false,
+                Spaces = false,
               },
             },
           },
