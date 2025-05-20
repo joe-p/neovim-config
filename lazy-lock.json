@@ -37,6 +37,7 @@
   "nvim-treesitter-textobjects": { "branch": "master", "commit": "ab0950c53d1ae04da8e488aa762b450d5241dca2" },
   "nvim-web-devicons": { "branch": "master", "commit": "1020869742ecb191f260818234517f4a1515cfe8" },
   "oil.nvim": { "branch": "master", "commit": "685cdb4ffa74473d75a1b97451f8654ceeab0f4a" },
+  "pathfinder.nvim": { "branch": "fix/file_uri_prefix", "commit": "925274fe71568ad9b83c1e449c7724c9199758b9" },
   "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },
   "snacks.nvim": { "branch": "main", "commit": "bc0630e43be5699bb94dadc302c0d21615421d93" },
   "stickybuf.nvim": { "branch": "master", "commit": "bf7221321e9b762d4deaef3aaaaa7ae5f3a7f902" },
