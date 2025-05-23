@@ -252,9 +252,9 @@ return {
       {
         '<leader>sS',
         function()
-          Snacks.picker.colorschemes()
+          Snacks.picker.lsp_workspace_symbols()
         end,
-        desc = '[S]earch Color [S]phemes',
+        desc = '[S]earch Workspace [S]ymbols',
       },
       {
         '<leader>sp',
