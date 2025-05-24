@@ -1,3 +1,7 @@
+if vim.g.vscode then
+  return
+end
+
 -- Get the window id for a buffer
 -- @param bufnr integer
 local function buf_to_win(bufnr)
