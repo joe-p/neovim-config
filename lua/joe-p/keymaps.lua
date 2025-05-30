@@ -113,4 +113,14 @@ if vim.g.vscode then
   end
 
   vim.keymap.set('n', '<leader>ww', select_workspace)
+
+  -- Search editor symbols
+  vim.keymap.set('n', '<leader>ss', function()
+    vscode.call('workbench.action.gotoSymbol')
+  end)
+
+  -- Search workspace symbols
+  vim.keymap.set('n', '<leader>sS', function()
+    vscode.call('workbench.action.showAllSymbols')
+  end)
 end
