@@ -59,6 +59,8 @@ return {
         typescript = { 'prettier' },
         javascript = { 'prettier' },
         markdown = { 'markdownlint' },
+        json = { 'prettier' },
+        c = { 'clang-format' },
         --
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list

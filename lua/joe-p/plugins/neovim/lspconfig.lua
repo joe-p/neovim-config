@@ -173,6 +173,8 @@ return {
         -- Markdown
         marksman = {},
 
+        clangd = {},
+
         -- Grammar/spelling
         harper_ls = {
           settings = {
@@ -241,6 +243,7 @@ return {
       lspconfig.gh_actions_ls.setup {}
 
       lspconfig.sourcekit.setup {
+        filetypes = { 'swift', 'objective-c', 'objective-cpp' },
         capabilities = {
           workspace = {
             didChangeWatchedFiles = {
