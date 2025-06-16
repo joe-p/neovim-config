@@ -266,7 +266,25 @@ return {
       {
         '<leader>ss',
         function()
-          Snacks.picker.lsp_symbols()
+          Snacks.picker.lsp_symbols {
+            filter = {
+              default = {
+                'Class',
+                'Constructor',
+                'Enum',
+                -- 'Field',
+                'Function',
+                'Interface',
+                'Method',
+                'Module',
+                'Namespace',
+                'Package',
+                -- 'Property',
+                'Struct',
+                'Trait',
+              },
+            },
+          }
         end,
         desc = '[S]earch LSP [S]ymbols',
       },
