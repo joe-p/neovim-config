@@ -14,7 +14,7 @@ return {
         debounce = 75,
         trigger_on_accept = true,
         keymap = {
-          accept = '<Tab>',
+          accept = '<C-l>',
           accept_word = false,
           accept_line = false,
           next = '<M-]>',
