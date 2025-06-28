@@ -153,6 +153,9 @@ return {
         -- ts_ls = {},
         --
 
+        -- zig
+        zls = {},
+
         -- Python
         ruff = {},
         basedpyright = {},
@@ -164,7 +167,16 @@ return {
         gopls = {},
 
         -- Rust
-        rust_analyzer = {},
+        rust_analyzer = {
+          settings = {
+            ['rust-analyzer'] = {
+              checkOnSave = true,
+              check = {
+                command = 'clippy',
+              },
+            },
+          },
+        },
 
         -- Ruby
         ruby_lsp = {},
