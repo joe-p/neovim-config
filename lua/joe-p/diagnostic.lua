@@ -99,13 +99,13 @@ vim.diagnostic.config {
 
 local last_line = vim.fn.line '.'
 
-vim.api.nvim_create_autocmd({ 'CursorMoved' }, {
+vim.api.nvim_create_autocmd({ 'CursorHold' }, {
   callback = function()
     local current_line = vim.fn.line '.'
 
     -- Check if the cursor has moved to a different line
     if current_line ~= last_line then
-      vim.diagnostic.hide()
+      --vim.diagnostic.hide()
       vim.diagnostic.show()
     end
 
