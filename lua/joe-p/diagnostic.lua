@@ -2,6 +2,9 @@ if vim.g.vscode then
   return
 end
 
+-- Latest version of diagnostic symbols (updated on CursorHold)
+local current_signs
+
 -- Get the window id for a buffer
 -- @param bufnr integer
 local function buf_to_win(bufnr)
@@ -73,7 +76,8 @@ local function virtual_lines_format(diagnostic)
   local lines = {}
   for msg_line in diagnostic.message:gmatch '([^\n]+)' do
     local max_width = text_area_width - diagnostic.col - center_width - left_width
-    vim.list_extend(lines, split_line(msg_line, max_width))
+    local symbol = current_signs.text[diagnostic.severity]
+    vim.list_extend(lines, split_line(symbol .. " " .. msg_line, max_width))
   end
 
   return table.concat(lines, '\n')
@@ -99,6 +103,7 @@ vim.diagnostic.config {
 
 vim.api.nvim_create_autocmd({ 'CursorHold' }, {
   callback = function()
+      current_signs = vim.diagnostic.config().signs
     vim.diagnostic.show()
   end,
 })
