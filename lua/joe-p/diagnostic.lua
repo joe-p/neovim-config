@@ -95,22 +95,11 @@ vim.diagnostic.config {
   severity_sort = { reverse = false },
 }
 
--- Re-draw diagnostics each line change to account for virtual_text changes
-
-local last_line = vim.fn.line '.'
+-- Re-draw diagnostics once navigation has ended
 
 vim.api.nvim_create_autocmd({ 'CursorHold' }, {
   callback = function()
-    local current_line = vim.fn.line '.'
-
-    -- Check if the cursor has moved to a different line
-    if current_line ~= last_line then
-      --vim.diagnostic.hide()
-      vim.diagnostic.show()
-    end
-
-    -- Update the last_line variable
-    last_line = current_line
+    vim.diagnostic.show()
   end,
 })
 
