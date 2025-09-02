@@ -58,7 +58,7 @@ return {
         python = { 'black' },
         typescript = { 'prettier' },
         javascript = { 'prettier' },
-        markdown = { 'markdownlint' },
+        markdown = { 'mdformat' },
         json = { 'prettier' },
         c = { 'clang-format' },
         --
