@@ -158,7 +158,16 @@ return {
 
         -- Python
         ruff = {},
-        basedpyright = {},
+        basedpyright = {
+          settings = {
+            basedpyright = {
+              analysis = {
+                typeCheckingMode = 'basic',
+                autoImportCompletions = true,
+              },
+            },
+          },
+        },
 
         -- TypeScript
         ts_ls = {},
@@ -237,15 +246,17 @@ return {
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       require('mason-lspconfig').setup {
+        ensure_installed = vim.tbl_keys(servers), -- optional but nice to keep in sync
         handlers = {
           function(server_name)
-            local server = servers[server_name] or {}
-            -- This handles overriding only values explicitly passed
-            -- by the server configuration above. Useful when disabling
-            -- certain features of an LSP (for example, turning off formatting for ts_ls)
-            server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-            server.capabilities = require('blink.cmp').get_lsp_capabilities(server.capabilities)
-            require('lspconfig')[server_name].setup(server)
+            local cfg = servers[server_name]
+            -- Skip anything not listed or explicitly disabled
+            if not cfg or cfg.enabled == false then
+              return
+            end
+            cfg.capabilities = vim.tbl_deep_extend('force', {}, capabilities, cfg.capabilities or {})
+            cfg.capabilities = require('blink.cmp').get_lsp_capabilities(cfg.capabilities)
+            require('lspconfig')[server_name].setup(cfg)
           end,
         },
       }
@@ -253,6 +264,19 @@ return {
       --  LSPs not installed by mason
       local lspconfig = require 'lspconfig'
       lspconfig.gh_actions_ls.setup {}
+
+      lspconfig['circom-lsp'].setup {
+        cmd = { 'circom-lsp' },
+        filetypes = { 'circom' },
+        root_markers = { '.git' },
+      }
+
+      vim.api.nvim_create_autocmd('FileType', {
+        pattern = 'circom',
+        callback = function()
+          vim.bo.commentstring = '// %s'
+        end,
+      })
 
       lspconfig.sourcekit.setup {
         filetypes = { 'swift', 'objective-c', 'objective-cpp' },
