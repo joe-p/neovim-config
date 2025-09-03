@@ -1,0 +1,5 @@
+require 'config.lazy'
+require 'keymaps'
+require 'options'
+require 'diagnostic'
+require 'autocmds'
