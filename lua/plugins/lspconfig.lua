@@ -2,7 +2,6 @@ return {
   'neovim/nvim-lspconfig',
   config = function()
     vim.api.nvim_create_autocmd('LspAttach', {
-      group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
       callback = function(event)
         -- NOTE: Remember that Lua is a real programming language, and as such it is possible
         -- to define small helper and utility functions so you don't have to repeat yourself.
@@ -28,8 +27,38 @@ return {
       end,
     })
 
-    vim.lsp.enable 'lua_ls'
-    vim.lsp.enable 'gopls'
-    vim.lsp.enable 'ts_ls'
+    vim.lsp.config('rust_analyzer', {
+      settings = {
+        ['rust-analyzer'] = {
+          checkOnSave = true,
+          check = {
+            command = 'clippy',
+          },
+        },
+      },
+    })
+
+    vim.lsp.config('basedpyright', {
+      settings = {
+        basedpyright = {
+          analysis = {
+            typeCheckingMode = 'basic',
+            autoImportCompletions = true,
+          },
+        },
+      },
+    })
+
+    local enabled_lsps = {
+      'lua_ls',
+      'gopls',
+      'ts_ls',
+      'rust_analyzer',
+      'basedpyright',
+    }
+
+    for _, lsp in ipairs(enabled_lsps) do
+      vim.lsp.enable(lsp)
+    end
   end,
 }
