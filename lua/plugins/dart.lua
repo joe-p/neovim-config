@@ -1,5 +1,7 @@
 return {
   'iofq/dart.nvim',
+  lazy = false,
+  priority = 1001,
   dependencies = {
     'echasnovski/mini.nvim', -- optional, icons provider
     'nvim-tree/nvim-web-devicons', -- optional, icons provider
