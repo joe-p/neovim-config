@@ -94,19 +94,26 @@ vim.diagnostic.config {
 -- Re-draw diagnostics each line change to account for virtual_text changes
 
 local last_line = vim.fn.line '.'
+local timer = nil
+local redraw_debounce = 300
 
 vim.api.nvim_create_autocmd({ 'CursorMoved' }, {
   callback = function()
     local current_line = vim.fn.line '.'
 
-    -- Check if the cursor has moved to a different line
     if current_line ~= last_line then
-      vim.diagnostic.hide()
-      vim.diagnostic.show()
-    end
+      -- Line changed - cancel any pending timer and start a new one
+      if timer then
+        timer:stop()
+      end
 
-    -- Update the last_line variable
-    last_line = current_line
+      timer = vim.defer_fn(function()
+        vim.diagnostic.hide()
+        vim.diagnostic.show()
+        last_line = current_line
+      end, redraw_debounce)
+    end
+    -- If same line, do nothing - let any existing timer continue
   end,
 })
 
