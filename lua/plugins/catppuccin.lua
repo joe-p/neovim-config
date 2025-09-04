@@ -4,6 +4,7 @@ return {
   priority = 1000,
   config = function()
     require('catppuccin').setup {
+      float = { transparent = false, solid = false },
       flavour = 'macchiato', -- latte, frappe, macchiato, mocha
       background = { -- :h background
         light = 'latte',
@@ -20,6 +21,10 @@ return {
         },
         which_key = true,
         notify = true,
+        dropbar = {
+          enabled = false,
+          color_mode = false, -- enable color for kind's texts, not just kind's icons
+        },
       },
     }
   end,
