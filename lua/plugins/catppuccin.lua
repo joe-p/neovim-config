@@ -22,7 +22,7 @@ return {
         which_key = true,
         notify = true,
         dropbar = {
-          enabled = false,
+          enabled = true,
           color_mode = false, -- enable color for kind's texts, not just kind's icons
         },
       },
