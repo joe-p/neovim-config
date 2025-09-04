@@ -95,7 +95,7 @@ vim.diagnostic.config {
 
 local last_line = vim.fn.line '.'
 local timer = nil
-local redraw_debounce = 300
+local redraw_debounce = 100
 
 vim.api.nvim_create_autocmd({ 'CursorMoved' }, {
   callback = function()
