@@ -55,6 +55,7 @@ return {
       'ts_ls',
       'rust_analyzer',
       'basedpyright',
+      'circom-lsp',
     }
 
     for _, lsp in ipairs(enabled_lsps) do
