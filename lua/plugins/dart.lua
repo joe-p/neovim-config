@@ -8,8 +8,8 @@ return {
   },
   opts = {
     mappings = {
-      mark = ' p', -- Mark current buffer
-      jump = '  ', -- Jump to buffer marked by next character i.e `;a`
+      mark = '<leader>p', -- Mark current buffer
+      jump = '<leader> ', -- Jump to buffer marked by next character i.e `;a`
       pick = '', -- Open Dart.pick
       next = '', -- Cycle right through the tabline
       prev = '', -- Cycle left through the tabline
