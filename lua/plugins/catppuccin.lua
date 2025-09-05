@@ -10,22 +10,8 @@ return {
         light = 'latte',
         dark = 'macchiato',
       },
+      auto_integrations = true,
       default_integrations = true,
-      integrations = {
-        blink_cmp = true,
-        grug_far = true,
-        diffview = true,
-        neotest = true,
-        snacks = {
-          enabled = true,
-        },
-        which_key = true,
-        notify = true,
-        dropbar = {
-          enabled = true,
-          color_mode = false, -- enable color for kind's texts, not just kind's icons
-        },
-      },
     }
   end,
 }
