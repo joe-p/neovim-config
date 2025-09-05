@@ -1,7 +1,8 @@
 return {
   'catppuccin/nvim',
   name = 'catppuccin',
-  priority = 1000,
+  lazy = false,
+  priority = 10000,
   config = function()
     require('catppuccin').setup {
       float = { transparent = false, solid = false },
@@ -13,5 +14,8 @@ return {
       auto_integrations = true,
       default_integrations = true,
     }
+
+    vim.o.background = 'dark'
+    vim.cmd.colorscheme 'catppuccin'
   end,
 }
