@@ -11,18 +11,8 @@ return {
     local float_term = Terminal:new { direction = 'float' }
     local horizontal_term = Terminal:new { direction = 'horizontal' }
     local vert_term = Terminal:new { direction = 'vertical', size = 50 }
-    -- Toggle function
-    local function toggle_float_term()
-      float_term:toggle()
-    end
 
-    vim.keymap.set('n', '<leader>jf', toggle_float_term, { desc = 'Toggle floating terminal' })
-
-    vim.keymap.set('n', '<leader>jj', function()
-      horizontal_term:toggle()
-    end, { desc = 'Toggle horizontal terminal' })
-
-    vim.keymap.set('n', '<leader>jv', function()
+    local function toggle_vert_term()
       if vert_term:is_open() then
         vert_term:close()
       else
@@ -30,7 +20,17 @@ return {
         vert_term:open()
         vert_term:resize(size)
       end
-    end, { desc = 'Toggle right terminal' })
+    end
+
+    vim.keymap.set('n', '<leader>jf', function()
+      float_term:toggle()
+    end, { desc = 'Toggle floating terminal' })
+
+    vim.keymap.set('n', '<leader>jh', function()
+      horizontal_term:toggle()
+    end, { desc = 'Toggle horizontal terminal' })
+
+    vim.keymap.set('n', '<leader>jj', toggle_vert_term, { desc = 'Toggle vertical terminal' })
 
     vim.api.nvim_create_autocmd('TermOpen', {
       pattern = 'term://*toggleterm#*',
