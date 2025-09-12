@@ -325,6 +325,13 @@ return {
         end,
         desc = '[S]earch/Replace In Workspace',
       },
+      {
+        '<leader>bd',
+        function()
+          Snacks.bufdelete()
+        end,
+        desc = 'Buffer [C]lose (no save)',
+      },
     },
     init = function()
       vim.api.nvim_create_autocmd('User', {
