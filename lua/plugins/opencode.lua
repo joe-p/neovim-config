@@ -17,7 +17,9 @@ return {
     {
       '<leader>aa',
       function()
-        require('opencode').ask '@cursor: '
+        local opencode = require 'opencode'
+        opencode.command 'session_new'
+        opencode.ask '@cursor: '
       end,
       desc = 'Ask opencode about this',
       mode = 'n',
@@ -25,7 +27,10 @@ return {
     {
       '<leader>aa',
       function()
-        require('opencode').ask '@selection: '
+        local opencode = require 'opencode'
+
+        opencode.command 'session_new'
+        opencode.ask '@selection: '
       end,
       desc = 'Ask opencode about selection',
       mode = 'v',
@@ -48,7 +53,10 @@ return {
     {
       '<leader>ad',
       function()
-        require('opencode').ask 'Explain @diagnostic and how to fix it'
+        local opencode = require 'opencode'
+
+        opencode.command 'session_new'
+        opencode.ask 'Explain @diagnostic and how to fix it'
       end,
       desc = 'Explain code near cursor',
     },
