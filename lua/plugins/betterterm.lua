@@ -25,6 +25,14 @@ return {
         vim.keymap.set('n', '<esc>', function()
           require('betterTerm').open()
         end, { buffer = true })
+
+        vim.keymap.set('n', 'jk', function()
+          require('betterTerm').open()
+        end, { buffer = true })
+
+        vim.keymap.set('n', 'kj', function()
+          require('betterTerm').open()
+        end, { buffer = true })
       end,
     })
   end,
