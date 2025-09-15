@@ -6,6 +6,6 @@ return {
   ---@type FylerSetupOptions
   opts = {},
   keys = {
-    { '<leader>wt', '<cmd>Fyler<cr>', desc = 'Open Fyler' },
+    { '<leader>wf', '<cmd>Fyler<cr>', desc = 'Open Fyler' },
   },
 }
