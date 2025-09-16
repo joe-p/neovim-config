@@ -20,7 +20,13 @@ return {
         },
       },
       picker = {
+        hidden = true,
         ui_select = true,
+        formatters = {
+          file = {
+            truncate = 120,
+          },
+        },
       },
     },
     keys = {
@@ -65,14 +71,14 @@ return {
       {
         '<leader>,',
         function()
-          Snacks.picker.buffers()
+          Snacks.picker.buffers { layout = { fullscreen = true } }
         end,
         desc = 'Find Buffers',
       },
       {
         '<leader>/',
         function()
-          Snacks.picker.grep { hidden = true }
+          Snacks.picker.grep { layout = { fullscreen = true } }
         end,
         desc = 'Grep Current Buffer',
       },
@@ -92,25 +98,11 @@ return {
         desc = '[F]ind [B]uffers',
       },
       {
-        '<leader>fc',
-        function()
-          Snacks.picker.files { cwd = vim.fn.stdpath 'config' }
-        end,
-        desc = '[F]ind [C]onfig File',
-      },
-      {
         '<leader>ff',
         function()
-          Snacks.picker.files { hidden = true }
+          Snacks.picker.files { layout = { fullscreen = true } }
         end,
         desc = '[F]ind [F]iles',
-      },
-      {
-        '<leader>fg',
-        function()
-          Snacks.picker.git_files()
-        end,
-        desc = '[F]ind [G]it Files',
       },
       -- git
       {
@@ -215,13 +207,6 @@ return {
         desc = '[S]earch [K]eymaps',
       },
       {
-        '<leader>sl',
-        function()
-          Snacks.picker.loclist()
-        end,
-        desc = '[S]earch [L]ocation List',
-      },
-      {
         '<leader>sM',
         function()
           Snacks.picker.man()
@@ -229,25 +214,11 @@ return {
         desc = '[S]earch [M]an Pages',
       },
       {
-        '<leader>sm',
-        function()
-          Snacks.picker.marks()
-        end,
-        desc = '[S]earch [M]arks',
-      },
-      {
         '<leader>sR',
         function()
           Snacks.picker.resume()
         end,
         desc = '[S]earch [R]esume',
-      },
-      {
-        '<leader>sq',
-        function()
-          Snacks.picker.qflist()
-        end,
-        desc = '[S]earch [Q]uickfix List',
       },
       {
         '<leader>sS',
