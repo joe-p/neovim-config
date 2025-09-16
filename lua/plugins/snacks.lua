@@ -14,11 +14,6 @@ return {
       },
       quickfile = { enabled = true },
       scroll = { enabled = true },
-      styles = {
-        notification = {
-          -- wo = { wrap = true } -- Wrap notifications
-        },
-      },
       picker = {
         layout = function(source)
           if source == 'lines' then
@@ -38,6 +33,13 @@ return {
       },
     },
     keys = {
+      {
+        '<leader>wt',
+        function()
+          Snacks.explorer()
+        end,
+        desc = 'Undo Last Notification Action',
+      },
       {
         '<leader>nh',
         function()
