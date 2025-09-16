@@ -20,6 +20,14 @@ return {
         },
       },
       picker = {
+        layout = function(source)
+          if source == 'lines' then
+            return 'ivy'
+          else
+            return { preset = 'default', fullscreen = true }
+          end
+        end,
+
         hidden = true,
         ui_select = true,
         formatters = {
@@ -71,14 +79,14 @@ return {
       {
         '<leader>,',
         function()
-          Snacks.picker.buffers { layout = { fullscreen = true } }
+          Snacks.picker.buffers()
         end,
         desc = 'Find Buffers',
       },
       {
         '<leader>/',
         function()
-          Snacks.picker.grep { layout = { fullscreen = true } }
+          Snacks.picker.grep()
         end,
         desc = 'Grep Current Buffer',
       },
@@ -100,7 +108,7 @@ return {
       {
         '<leader>ff',
         function()
-          Snacks.picker.files { layout = { fullscreen = true } }
+          Snacks.picker.files()
         end,
         desc = '[F]ind [F]iles',
       },
@@ -123,7 +131,8 @@ return {
       {
         '<leader>sb',
         function()
-          Snacks.picker.lines()
+          local Snacks = require 'snacks'
+          Snacks.picker.lines { fullscreen = false }
         end,
         desc = '[S]earch [B]uffer Lines',
       },
