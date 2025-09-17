@@ -1,5 +1,6 @@
 return {
-  'linux-cultist/venv-selector.nvim',
+  'joe-p/venv-selector.nvim',
+  branch = 'feat/snacks_layout',
   dependencies = {
     'neovim/nvim-lspconfig',
   },
@@ -10,6 +11,7 @@ return {
   opts = { -- this can be an empty lua table - just showing below for clarity.
     options = {
       picker = 'snacks',
+      snacks_layout = { preset = 'default', preview = { main = false, enabled = false }, fullscreen = false },
     },
   },
 }
