@@ -15,6 +15,17 @@ return {
       quickfile = { enabled = true },
       scroll = { enabled = true },
       picker = {
+        sources = {
+          explorer = {
+            layout = {
+              preset = 'default',
+              fullscreen = true,
+              ---@diagnostic disable-next-line: assign-type-mismatch
+              preview = { main = false, enabled = true },
+            },
+            auto_close = true,
+          },
+        },
         layout = function(source)
           if source == 'lines' then
             return 'ivy'
