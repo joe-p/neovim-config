@@ -9,6 +9,9 @@ return {
     { '<leader>cv', '<cmd>VenvSelect<cr>' }, -- Open picker on keymap
   },
   opts = { -- this can be an empty lua table - just showing below for clarity.
+    search = {
+      pipx = false,
+    },
     options = {
       picker = 'snacks',
       snacks_layout = { preset = 'default', preview = { main = false, enabled = false }, fullscreen = false },
