@@ -14,7 +14,11 @@ return {
     },
     options = {
       picker = 'snacks',
-      snacks_layout = { preset = 'default', preview = { main = false, enabled = false }, fullscreen = false },
+      picker_options = {
+        snacks = {
+          layout = { preset = 'default', preview = { main = false, enabled = false }, fullscreen = false },
+        },
+      },
     },
   },
 }
