@@ -56,6 +56,7 @@ return {
       'rust_analyzer',
       'basedpyright',
       'circom-lsp',
+      'jinja_lsp',
     }
 
     for _, lsp in ipairs(enabled_lsps) do
