@@ -57,6 +57,7 @@ return {
       'basedpyright',
       'circom-lsp',
       'jinja_lsp',
+      'sourcekit',
     }
 
     for _, lsp in ipairs(enabled_lsps) do
