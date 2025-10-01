@@ -9,9 +9,9 @@ return {
       'MeanderingProgrammer/render-markdown.nvim',
       opts = {
         anti_conceal = { enabled = false },
-        file_types = { 'markdown', 'opencode_output' },
+        file_types = { 'opencode_output' },
       },
-      ft = { 'markdown', 'Avante', 'copilot-chat', 'opencode_output' },
+      ft = { 'Avante', 'copilot-chat', 'opencode_output' },
     },
   },
 }
