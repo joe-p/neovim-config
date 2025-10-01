@@ -56,7 +56,6 @@ return {
       'rust_analyzer',
       'basedpyright',
       'circom-lsp',
-      'jinja_lsp',
       'sourcekit',
     }
 
