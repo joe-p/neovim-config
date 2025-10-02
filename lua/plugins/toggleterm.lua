@@ -19,7 +19,7 @@ local function num_mappings()
     end
 
     table.insert(mappings, {
-      '<leader>' .. key,
+      '<leader>j' .. key,
       function()
         local terms = require 'toggleterm'
         if is_toggleterm_open() then
@@ -27,7 +27,7 @@ local function num_mappings()
         end
         terms.toggle(i)
       end,
-      desc = false,
+      desc = 'Toggle terminal ' .. i,
     })
   end
 
@@ -36,7 +36,7 @@ end
 
 local keys = {
   {
-    '<leader>j',
+    '<leader>jj',
     function()
       require('toggleterm').toggle()
     end,
@@ -52,6 +52,17 @@ return {
   opts = {
     direction = 'vertical',
     size = vim.o.columns * 0.5,
+    shade_terminals = false,
   },
+  config = function(_, opts)
+    require('toggleterm').setup(opts)
+
+    vim.api.nvim_create_autocmd('TermOpen', {
+      pattern = 'term://*toggleterm#*',
+      callback = function()
+        vim.api.nvim_buf_set_keymap(0, 'n', 'jk', '<cmd>ToggleTerm<CR>', { noremap = true, silent = true, desc = 'Close ToggleTerm with jk' })
+      end,
+    })
+  end,
   keys = keys,
 }
