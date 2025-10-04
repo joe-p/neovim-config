@@ -60,6 +60,12 @@ return {
     sources = {
       default = { 'lsp', 'path' },
     },
+    cmdline = {
+      keymap = {
+        ['<Tab>'] = { 'show', 'accept' },
+      },
+      completion = { menu = { auto_show = true } },
+    },
 
     -- (Default) Rust fuzzy matcher for typo resistance and significantly better performance
     -- You may use a lua implementation instead by using `implementation = "lua"` or fallback to the lua implementation,
