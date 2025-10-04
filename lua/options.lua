@@ -68,4 +68,9 @@ vim.opt.scrolloff = 10
 -- also add globals as per :h bufferline
 vim.o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions,globals'
 
+vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.opt.foldtext = 'v:lua.vim.treesitter.foldtext()'
+vim.opt.foldmethod = 'expr'
+vim.opt.foldlevelstart = 99
+
 -- vim: ts=2 sts=2 sw=2 et
