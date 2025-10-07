@@ -10,6 +10,7 @@ return {
       markdown = { 'mdformat' },
       json = { 'prettier' },
       c = { 'clang-format' },
+      typst = { 'typstyle' },
     },
     format_on_save = function(bufnr)
       -- Disable with a global or buffer-local variable
