@@ -8,8 +8,8 @@ return {
   ---@type AutoSession.Config
   opts = {
     suppressed_dirs = { '~/', '~/Projects', '~/Downloads', '/' },
-    git_use_branch_name = true, -- Include git branch name in session name
-    git_auto_restore_on_branch_change = true, -- Should we auto-restore the session when the git branch changes. Requires git_use_branch_name
+    git_use_branch_name = false, -- Include git branch name in session name
+    git_auto_restore_on_branch_change = false, -- Should we auto-restore the session when the git branch changes. Requires git_use_branch_name
     show_auto_restore_notif = true, -- Whether to show a notification when auto-restoring
     -- log_level = 'debug',
     pre_save_cmds = {
