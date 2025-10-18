@@ -57,6 +57,7 @@ return {
       'basedpyright',
       'circom-lsp',
       'sourcekit',
+      'harper_ls',
     }
 
     for _, lsp in ipairs(enabled_lsps) do
