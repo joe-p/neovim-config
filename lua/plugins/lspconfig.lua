@@ -58,6 +58,7 @@ return {
       'circom-lsp',
       'sourcekit',
       'harper_ls',
+      'zls',
     }
 
     for _, lsp in ipairs(enabled_lsps) do
