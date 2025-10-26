@@ -50,8 +50,7 @@ return {
   'akinsho/toggleterm.nvim',
   version = '*',
   opts = {
-    direction = 'vertical',
-    size = vim.o.columns * 0.5,
+    direction = 'float',
     shade_terminals = false,
   },
   config = function(_, opts)
