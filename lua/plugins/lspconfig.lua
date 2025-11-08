@@ -49,6 +49,22 @@ return {
       },
     })
 
+    vim.lsp.config('puyats-ls', {
+      -- use npx which first checks local node_modules/.bin before global installs
+      cmd = { 'npx', '--no-install', 'puyats-ls', '--stdio' },
+      filetypes = {
+        'typescript',
+      },
+      root_dir = function(bufnr, on_dir)
+        -- If the file is an algo.ts file, we'll attach the LSP using the same root_dir as ts_ls
+        if vim.fn.bufname(bufnr):match '%.algo.ts$' then
+          vim.lsp.config.ts_ls.root_dir(bufnr, function(project_root)
+            on_dir(project_root)
+          end)
+        end
+      end,
+    })
+
     local enabled_lsps = {
       'lua_ls',
       'gopls',
@@ -59,6 +75,7 @@ return {
       'sourcekit',
       'harper_ls',
       'zls',
+      'puyats-ls',
     }
 
     for _, lsp in ipairs(enabled_lsps) do
