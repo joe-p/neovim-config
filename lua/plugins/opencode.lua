@@ -1,7 +1,14 @@
 return {
   'sudo-tee/opencode.nvim',
   config = function()
-    require('opencode').setup {}
+    require('opencode').setup {
+      keymap = {
+        input_window = {
+          ['jk'] = { 'close' }, -- Close UI windows
+          ['<tab>'] = { 'switch_mode' }, -- Switch between modes (build/plan)
+        },
+      },
+    }
   end,
   dependencies = {
     'nvim-lua/plenary.nvim',
