@@ -21,6 +21,7 @@ return {
         if string.find(vim.api.nvim_buf_get_name(0), 'lazygit') then
           vim.keymap.set('t', '<Esc>', '<Esc>', { buffer = true })
           vim.keymap.set('t', '<Esc><Esc>', '<Esc><Esc>', { buffer = true })
+          vim.keymap.set('t', 'jk', '<Esc><Esc>', { buffer = true })
         end
       end,
     })
