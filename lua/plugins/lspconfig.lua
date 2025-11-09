@@ -50,8 +50,7 @@ return {
     })
 
     vim.lsp.config('puyats-ls', {
-      -- use npx which first checks local node_modules/.bin before global installs
-      cmd = { 'npx', '--no-install', 'puyats-ls', '--stdio' },
+      cmd = { 'puyats-ls', '--stdio' },
       filetypes = {
         'typescript',
       },
