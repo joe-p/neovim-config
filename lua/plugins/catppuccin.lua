@@ -13,6 +13,11 @@ return {
       },
       auto_integrations = true,
       default_integrations = true,
+      lsp_styles = { -- Handles the style of specific lsp hl groups (see `:h lsp-highlight`).
+        inlay_hints = {
+          background = false,
+        },
+      },
     }
 
     vim.o.background = 'dark'

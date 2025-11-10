@@ -24,6 +24,11 @@ return {
         -- WARN: This is not Goto Definition, this is Goto Declaration.
         --  For example, in C this would take you to the header.
         map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+
+        local client = vim.lsp.get_client_by_id(event.data.client_id)
+        if client and client.server_capabilities.inlayHintProvider then
+          vim.lsp.inlay_hint.enable(true, { bufnr = event.buf })
+        end
       end,
     })
 
@@ -33,6 +38,18 @@ return {
           checkOnSave = true,
           check = {
             command = 'clippy',
+          },
+          inlayHints = {
+            typeHints = {
+              enable = false,
+            },
+            closingBraceHints = {
+              enable = true,
+              minLines = 0,
+            },
+            closureCaptureHints = {
+              enable = true, -- show closure capture info
+            },
           },
         },
       },
