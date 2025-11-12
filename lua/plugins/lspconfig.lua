@@ -72,9 +72,9 @@ return {
         'typescript',
       },
       root_dir = function(bufnr, on_dir)
-        -- If the file is an algo.ts file, we'll attach the LSP using the same root_dir as ts_ls
+        -- If the file is an algo.ts file, we'll attach the LSP using the same root_dir as vtsls
         if vim.fn.bufname(bufnr):match '%.algo.ts$' then
-          vim.lsp.config.ts_ls.root_dir(bufnr, function(project_root)
+          vim.lsp.config.vtsls.root_dir(bufnr, function(project_root)
             on_dir(project_root)
           end)
         end
@@ -84,7 +84,7 @@ return {
     local enabled_lsps = {
       'lua_ls',
       'gopls',
-      'ts_ls',
+      'vtsls',
       'rust_analyzer',
       'basedpyright',
       'circom-lsp',
