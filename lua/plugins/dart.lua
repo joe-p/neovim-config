@@ -15,6 +15,16 @@ return {
       prev = '', -- Cycle left through the tabline
       unmark_all = '', -- Close all marked and recent buffers
     },
+    tabline = {
+      -- put pinned buffers first
+      order = function(config)
+        local order = {}
+        for i, key in ipairs(vim.list_extend(vim.deepcopy(config.marklist), config.buflist)) do
+          order[key] = i
+        end
+        return order
+      end,
+    },
   }, -- see Configuration section
   config = function(_, opts)
     require('dart').setup(opts)
