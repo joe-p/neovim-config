@@ -32,6 +32,8 @@ return {
       end,
     })
 
+    vim.lsp.config('sourcekit', { filetypes = { 'swift', 'objective-c', 'objective-cpp' } })
+
     vim.lsp.config('rust_analyzer', {
       settings = {
         ['rust-analyzer'] = {
@@ -92,6 +94,7 @@ return {
       'harper_ls',
       'zls',
       'puyats-ls',
+      'clangd',
     }
 
     for _, lsp in ipairs(enabled_lsps) do
