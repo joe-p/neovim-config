@@ -45,7 +45,7 @@ return {
             },
             closingBraceHints = {
               enable = true,
-              minLines = 0,
+              minLines = 25,
             },
             closureCaptureHints = {
               enable = true, -- show closure capture info
