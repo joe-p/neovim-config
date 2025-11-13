@@ -95,6 +95,7 @@ return {
       'zls',
       'puyats-ls',
       'clangd',
+      'kotlin_lsp',
     }
 
     for _, lsp in ipairs(enabled_lsps) do

@@ -11,6 +11,7 @@ return {
       json = { 'prettier' },
       c = { 'clang-format' },
       typst = { 'typstyle' },
+      kotlin = { 'ktfmt' },
     },
     format_on_save = function(bufnr)
       -- Disable with a global or buffer-local variable
