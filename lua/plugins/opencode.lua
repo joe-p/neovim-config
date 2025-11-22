@@ -22,7 +22,7 @@ return {
           enabled = true, -- Include current file path and content in the context
         },
         selection = {
-          enabled = true, -- Include selected text in the context
+          enabled = false, -- Include selected text in the context
         },
       },
     }
