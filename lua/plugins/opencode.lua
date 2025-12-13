@@ -7,6 +7,9 @@ return {
           ['jk'] = { 'close' }, -- Close UI windows
           ['<tab>'] = { 'switch_mode' }, -- Switch between modes (build/plan)
         },
+        output_window = {
+          ['jk'] = { 'close' }, -- Close UI windows
+        },
       },
       context = {
         enabled = true, -- Enable automatic context capturing
