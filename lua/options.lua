@@ -73,6 +73,8 @@ vim.opt.foldtext = 'v:lua.vim.treesitter.foldtext()'
 vim.opt.foldmethod = 'expr'
 vim.opt.foldlevelstart = 99
 
+vim.treesitter.language.register('python', 'sage')
+
 vim.opt.termguicolors = true
 
 -- vim: ts=2 sts=2 sw=2 et
