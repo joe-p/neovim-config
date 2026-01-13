@@ -24,9 +24,6 @@ return {
       end
 
       return {
-        filter = function(client)
-          return client.name ~= 'ts_ls'
-        end,
         -- These options will be passed to conform.format()
         timeout_ms = 500,
         lsp_format = 'fallback',
