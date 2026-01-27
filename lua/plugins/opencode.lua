@@ -38,7 +38,7 @@ return {
         anti_conceal = { enabled = false },
         file_types = { 'opencode_output' },
       },
-      ft = { 'Avante', 'copilot-chat', 'opencode_output' },
+      ft = { 'opencode_output' },
     },
   },
 }
