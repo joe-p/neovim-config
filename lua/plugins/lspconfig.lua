@@ -37,6 +37,12 @@ return {
     vim.lsp.config('rust_analyzer', {
       settings = {
         ['rust-analyzer'] = {
+          procMacro = {
+            enable = true,
+            attributes = {
+              enable = true,
+            },
+          },
           checkOnSave = true,
           check = {
             command = 'clippy',
