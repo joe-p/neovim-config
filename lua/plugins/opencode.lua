@@ -1,5 +1,7 @@
 return {
   'sudo-tee/opencode.nvim',
+  -- Last known good version according to https://github.com/sudo-tee/opencode.nvim/issues/271
+  commit = '34f9f42df01ba851d4f0bfff1f84c100454ed743',
   config = function()
     require('opencode').setup {
       keymap = {
