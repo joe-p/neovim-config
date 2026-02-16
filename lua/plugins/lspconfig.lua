@@ -75,7 +75,7 @@ return {
     })
 
     vim.lsp.config('puyats-ls', {
-      cmd = { 'puyats-ls', '--stdio' },
+      cmd = { 'npx', 'puyats-ls', '--stdio' },
       filetypes = {
         'typescript',
       },
