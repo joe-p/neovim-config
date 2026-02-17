@@ -1,6 +1,5 @@
 return {
-  'joe-p/opencode.nvim',
-  branch = 'fix/snacks_order',
+  'sudo-tee/opencode.nvim',
   config = function()
     require('opencode').setup {
       preferred_picker = 'snacks',
