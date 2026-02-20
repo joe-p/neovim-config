@@ -68,7 +68,7 @@ return {
       {
         '<leader>gB',
         function()
-          Snacks.gitbrowse()
+          Snacks.gitbrowse { what = 'permalink' }
         end,
         desc = 'Git Browse',
         mode = { 'n', 'v' },
