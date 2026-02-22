@@ -2,6 +2,7 @@ return {
   'sudo-tee/opencode.nvim',
   config = function()
     require('opencode').setup {
+      default_mode = 'plan',
       preferred_picker = 'snacks',
       keymap = {
         input_window = {
