@@ -96,6 +96,8 @@ return {
             ToDoHyphen = false,
             OrthographicConsistency = false,
             SentenceCapitalization = false,
+            Dashes = false,
+            ExpandMemoryShorthands = false,
           },
         },
       },
