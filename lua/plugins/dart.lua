@@ -2,9 +2,6 @@ return {
   'iofq/dart.nvim',
   lazy = false,
   priority = 1001,
-  dependencies = {
-    'nvim-tree/nvim-web-devicons', -- optional, icons provider
-  },
   opts = {
     mappings = {
       mark = '<leader>p', -- Mark current buffer
