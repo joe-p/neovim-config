@@ -5,8 +5,8 @@ return {
   enabled = true,
   init = function()
     vim.g.llama_config = {
-      keymap_accept_full = '<C-l>',
-      keymap_accept_line = '<C-k>',
+      keymap_fim_accept_full = '<C-l>',
+      keymap_fim_accept_line = '<C-k>',
       show_info = 0,
     }
   end,
