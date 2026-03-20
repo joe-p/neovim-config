@@ -89,6 +89,18 @@ return {
       end,
     })
 
+    vim.lsp.config('harper_ls', {
+      settings = {
+        ['harper-ls'] = {
+          linters = {
+            ToDoHyphen = false,
+            OrthographicConsistency = false,
+            SentenceCapitalization = false,
+          },
+        },
+      },
+    })
+
     local enabled_lsps = {
       'lua_ls',
       'gopls',
