@@ -7,7 +7,7 @@ require('catppuccin').setup {
     light = 'latte',
     dark = 'macchiato',
   },
-  auto_integrations = true,
+  auto_integrations = false,
   default_integrations = true,
   lsp_styles = { -- Handles the style of specific lsp hl groups (see `:h lsp-highlight`).
     inlay_hints = {
