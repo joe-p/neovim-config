@@ -21,6 +21,10 @@
       "rev": "93cd80c56f71af4671388c568a37d4c84c3ddefa",
       "src": "https://github.com/esmuellert/codediff.nvim"
     },
+    "codesnap.nvim": {
+      "rev": "0a0941340376439a25d6cd8a4d1d2b372edbfdbd",
+      "src": "https://github.com/mistricky/codesnap.nvim"
+    },
     "conform.nvim": {
       "rev": "086a40dc7ed8242c03be9f47fbcee68699cc2395",
       "src": "https://github.com/stevearc/conform.nvim"
