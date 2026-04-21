@@ -1,4 +1,4 @@
-vim.pack.add({ 'https://github.com/neovim/nvim-lspconfig' })
+vim.pack.add { 'https://github.com/neovim/nvim-lspconfig' }
 
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(event)
@@ -66,7 +66,7 @@ vim.lsp.config('puyats-ls', {
     'typescript',
   },
   root_dir = function(bufnr, on_dir)
-    if vim.fn.bufname(bufnr):match('%.algo.ts$') then
+    if vim.fn.bufname(bufnr):match '%.algo.ts$' then
       vim.lsp.config.vtsls.root_dir(bufnr, function(project_root)
         on_dir(project_root)
       end)
@@ -101,6 +101,7 @@ local enabled_lsps = {
   'puyats-ls',
   'clangd',
   'kotlin_lsp',
+  'denols',
 }
 
 for _, lsp in ipairs(enabled_lsps) do
