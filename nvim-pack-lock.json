@@ -117,6 +117,14 @@
       "rev": "1db841b8e9d4dd75f9899b97efb98fc18fb730cd",
       "src": "https://github.com/sudo-tee/opencode.nvim"
     },
+    "pi-agent.nvim": {
+      "rev": "466cd117d0c54eb5467cff3f47a0de446e5492a9",
+      "src": "/Users/joe/git/joe-p/pi-agent.nvim"
+    },
+    "pi.nvim": {
+      "rev": "4c9648e3c11c53d0d97f1b307a92fec4788bbda5",
+      "src": "https://github.com/0xburden/pi.nvim"
+    },
     "plenary.nvim": {
       "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
       "src": "https://github.com/nvim-lua/plenary.nvim"
@@ -162,10 +170,6 @@
     "vim-sleuth": {
       "rev": "be69bff86754b1aa5adcbb527d7fcd1635a84080",
       "src": "https://github.com/tpope/vim-sleuth"
-    },
-    "vimade": {
-      "rev": "9b2eacd9c97c0bb547f6f3a27e8b5b7a70ad4d03",
-      "src": "https://github.com/tadaa/vimade"
     },
     "which-key.nvim": {
       "rev": "3aab2147e74890957785941f0c1ad87d0a44c15a",
