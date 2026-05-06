@@ -8,9 +8,12 @@ require('render-markdown').setup {
   file_types = { 'pichat' },
 }
 
-require('pi').setup {
+require('pi-agent').setup {
   keymaps = {
     close = 'jk',
+    commands = {
+      ['<Tab>'] = 'plan',
+    },
   },
 }
 
