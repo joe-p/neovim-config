@@ -118,8 +118,8 @@
       "src": "https://github.com/sudo-tee/opencode.nvim"
     },
     "pi-agent.nvim": {
-      "rev": "63fe1916a160faf784c1a5ad0a1e72e250a2dafe",
-      "src": "/Users/joe/git/joe-p/pi-agent.nvim"
+      "rev": "3aac0325053540fb23a7c37ec551d37268b19527",
+      "src": "https://github.com/joe-p/pi-agent.nvim"
     },
     "pi.nvim": {
       "rev": "4c9648e3c11c53d0d97f1b307a92fec4788bbda5",
