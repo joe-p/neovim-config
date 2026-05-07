@@ -3,30 +3,6 @@
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
--- Sync clipboard between OS and Neovim.
---  Schedule the setting after `UiEnter` because it can increase startup-time.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
-vim.schedule(function()
-  vim.g.clipboard = {
-    name = 'OSC 52',
-    copy = {
-      ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
-      ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
-    },
-    -- Wezterm doesn't support paste via OSC 52, but neovim needs a full table for vim.g.clipboard
-    paste = {
-      ['+'] = function() return { vim.fn.split(vim.fn.getreg('"'), '\n'), vim.fn.getregtype('"') } end,
-      ['*'] = function() return { vim.fn.split(vim.fn.getreg('"'), '\n'), vim.fn.getregtype('"') } end,
-    },
-  }
-  vim.opt.clipboard = 'unnamedplus'
-end)
-
-if vim.g.vscode then
-  return
-end
-
 -- Make line numbers default
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
@@ -84,8 +60,6 @@ vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 vim.opt.foldtext = 'v:lua.vim.treesitter.foldtext()'
 vim.opt.foldmethod = 'expr'
 vim.opt.foldlevelstart = 99
-
-vim.treesitter.language.register('python', 'sage')
 
 vim.opt.termguicolors = true
 
