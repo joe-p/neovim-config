@@ -14,6 +14,11 @@ vim.schedule(function()
       ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
       ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
     },
+    -- Wezterm doesn't support paste via OSC 52, but neovim needs a full table for vim.g.clipboard
+    paste = {
+      ['+'] = function() return { vim.fn.split(vim.fn.getreg('"'), '\n'), vim.fn.getregtype('"') } end,
+      ['*'] = function() return { vim.fn.split(vim.fn.getreg('"'), '\n'), vim.fn.getregtype('"') } end,
+    },
   }
   vim.opt.clipboard = 'unnamedplus'
 end)
