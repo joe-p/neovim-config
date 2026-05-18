@@ -4,7 +4,7 @@ vim.pack.add {
 
 require('render-markdown').setup {
   anti_conceal = { enabled = false },
-  file_types = { 'pichat', 'markdown' },
+  file_types = { 'pichat', 'markdown', 'opencode_output' },
   heading = {
     -- Useful context to have when evaluating values.
     -- | level    | the number of '#' in the heading marker         |
